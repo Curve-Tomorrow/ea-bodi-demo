@@ -1,25 +1,33 @@
-# SQLite. Versions 3.8.0 and up are supported.
-#   gem install sqlite3
+# PostgreSQL. Versions 8.2 and up are supported.
+#   gem install pg
 #
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem "sqlite3"
+#   Configure Using Gemfile
+#   gem 'pg'
 #
 default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  adapter: postgresql
+  pool: 5
   timeout: 5000
+  host: <%= ENV['RDS_HOSTNAME'] || 'localhost' %>
+  port: <%= ENV['RDS_PORT'] || 5432 %>
+  username: <%= ENV['RDS_USERNAME'] || 'ea_bodi_demo' %>
+  password: <%= ENV['RDS_PASSWORD'] || 'ea_bodi_demo' %>
 
 development:
   <<: *default
-  database: storage/development.sqlite3
+  database: ea_bodi_demo_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
+test: &test
   <<: *default
-  database: storage/test.sqlite3
+  database: ea_bodi_demo_test
 
 production:
   <<: *default
-  database: storage/production.sqlite3
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+
