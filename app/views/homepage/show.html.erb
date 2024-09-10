@@ -93,3 +93,22 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Brand Buttons -->
+                    <div class="col-xl-3 col-md-6 mb-4">
+                    </div>
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Interpreting Request Coming In</h6>
+                                </div>
+                                <div class="card-body">
+                                There is an incoming call for interpretation in an emergency. Are you free to take the call?
+                                <br>
+                                <%= link_to video_call_path(ENV['VIDEO_CALL_UUID']), class: "btn btn-google btn-block" do %>
+                                    <i class="fas fa-fw fa-video"></i>
+                                <span>Interpreter Video Call</span>
+                              <% end %>
+                                    
+                            </div>
+
+                            

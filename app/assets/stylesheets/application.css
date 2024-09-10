@@ -18,3 +18,16 @@
  @import 'dialog';
  @import 'sb-admin-2';
  @import 'stylesheets/vendor/fontawesome-all.min';
+
+
+.transparent-background {
+    background-color: hsla(120, 4%, 5%, 0.346); 
+  }
+  
+  .justify-content-evenly {
+    display: flex;
+    justify-content: space-between; /* Spreads elements evenly */
+    align-items: center; /* Centers elements vertically */
+    padding: 10px;
+    border: 1px solid #ccc;
+  }

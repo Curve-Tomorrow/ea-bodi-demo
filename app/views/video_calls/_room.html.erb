@@ -6,5 +6,22 @@
     join_room_token_value: @token 
   } do %>
   <%= tag.div id: "room-container", data: { action:"turbo:frame-render->join-room#connect" } %>
+  <div class="d-flex justify-content-center align-items-center">
+                            <div class="rounded-pill align-items-center justify-content-between d-sm-flex" style="width: 80%; background-color: hsla(120, 4%, 5%, 0.346); padding: 10px">
+                            <a href="#" class="btn btn-grey btn-circle btn-lg">
+                            <i class="fas fa-ellipsis-v"></i>
+                            </a>
+                                  <a href="#" class="btn btn-grey btn-circle btn-lg">
+                                      <i class="fas fa-camera"></i>
+                                  </a>
+                                  
+                                  <a href="#" class="btn btn-grey btn-circle btn-lg">
+                                  <i class="fas fa-microphone"></i>
+                                  </a>
+                                  <%= link_to root_path, class: 'btn btn-danger btn-circle btn-lg' do %>
+                                      <i class="fas fa-stop"></i>
+                                  <% end %>
+                              </div>
+                              </div>
 <% end %>
-<%= link_to 'Leave video call/ビデオ通話を終了する', root_path, class: 'button alert' %>
+
