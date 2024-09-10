@@ -1,14 +1,21 @@
+<div class="container">
+<div class="row">
+<div class="col d-flex justify-content-center align-items-center">
+
 <%= turbo_frame_tag 'room', data: {
     controller: "join-room",
     join_room_api_key_value: @video_call.application_id,
     join_room_session_id_value: @video_call.session_id,
-    join_room_participant_name_value: session[:participant_name],
+    join_room_participant_name_value: 'Morgan Scott',
     join_room_token_value: @token 
   } do %>
   <%= tag.div id: "room-container", data: { action:"turbo:frame-render->join-room#connect" } %>
   
 <% end %>
-<div class="d-flex justify-content-center align-items-center">
+</div>
+</div>
+<div class="row">
+<div class="col d-flex justify-content-center align-items-center">
                             <div class="rounded-pill align-items-center justify-content-between d-sm-flex" style="width: 80%; background-color: hsla(120, 4%, 5%, 0.346); padding: 10px">
                           <a href="#" class="btn btn-grey btn-circle btn-lg">
                             <i class="fas fa-ellipsis-v"></i>
@@ -25,8 +32,16 @@
                                   <% end %>
                               </div>
                               </div>
-
-                              <div class="d-flex justify-content-center align-items-center">
-                                    <%= link_to "Open Hospital App", "https://ea-bodi-app-canary.vercel.app/hospital?token=#{@token_hospital}", target: "_blank", class: 'btn btn-primary' %>
-                                    <%= link_to "Open Ambulance App", "https://ea-bodi-app-canary.vercel.app/ambulance?token=#{@token_ambulance}", target: "_blank", class: 'btn btn-primary' %>
                               </div>
+                             
+  <div class="row"  style="margin-top: 1rem">
+    <div class="col d-flex justify-content-center align-items-center">
+    <%= link_to "Open Hospital App", "https://ea-bodi-app-canary.vercel.app/hospital?token=#{@token_hospital}", target: "_blank", class: 'btn btn-primary' %>
+
+    </div>
+    <div class="col d-flex justify-content-center align-items-center">
+                                    <%= link_to "Open Ambulance App", "https://ea-bodi-app-canary.vercel.app/ambulance?token=#{@token_ambulance}", target: "_blank", class: 'btn btn-primary' %>
+
+    </div>
+  </div>
+</div>
