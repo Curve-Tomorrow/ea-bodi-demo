@@ -68,3 +68,5 @@ end
 
 gem "vonage_rails", "~> 1.2"
 gem "dotenv-rails", "~> 3.1"
+
+gem 'sassc-rails'

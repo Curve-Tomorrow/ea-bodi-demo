@@ -1,13 +1,32 @@
-<h1>Create Video Call/ビデオ通話を作成する</h1>
-<p>Start a new video call/新しいビデオ通話を開始する.</p>
-<%= form_with model: @video_call do |form| %>
-  <%= form.label :name, "Room Name/部屋の名前" %>
-  <%= form.text_field :name, required: true %>
-  <%= form.submit 'Create Video Call/ビデオ通話を作成する' %>
-<% end %>
-<% flash.each do |type, message| %>
-  <mark class="<%= type %>">
-    <%= message %>
-  </mark>
-<% end %>
-</body>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Video Call</h1>
+                      
+                    </div>
+
+
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-10 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                            Start a new video call</div>
+                                            <%= form_with model: @video_call do |form| %>
+                                              <%= form.label :name, "Room Name" %>
+                                              <%= form.text_field :name, required: true %>
+                                              <%= form.submit 'Create' %>
+                                            <% end %>
+                                            <% flash.each do |type, message| %>
+                                              <mark class="<%= type %>">
+                                                <%= message %>
+                                              </mark>
+                                            <% end %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
