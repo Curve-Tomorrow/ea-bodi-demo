@@ -6,11 +6,13 @@
     join_room_token_value: @token 
   } do %>
   <%= tag.div id: "room-container", data: { action:"turbo:frame-render->join-room#connect" } %>
-  <div class="d-flex justify-content-center align-items-center">
+  
+<% end %>
+<div class="d-flex justify-content-center align-items-center">
                             <div class="rounded-pill align-items-center justify-content-between d-sm-flex" style="width: 80%; background-color: hsla(120, 4%, 5%, 0.346); padding: 10px">
-                            <a href="#" class="btn btn-grey btn-circle btn-lg">
+                          <a href="#" class="btn btn-grey btn-circle btn-lg">
                             <i class="fas fa-ellipsis-v"></i>
-                            </a>
+                          </a>
                                   <a href="#" class="btn btn-grey btn-circle btn-lg">
                                       <i class="fas fa-camera"></i>
                                   </a>
@@ -23,5 +25,3 @@
                                   <% end %>
                               </div>
                               </div>
-<% end %>
-
