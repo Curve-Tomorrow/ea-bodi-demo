@@ -25,3 +25,8 @@
                                   <% end %>
                               </div>
                               </div>
+
+                              <div class="d-flex justify-content-center align-items-center">
+                                    <%= link_to "Open Hospital App", "https://ea-bodi-app-canary.vercel.app/hospital?token=#{@token_hospital}", target: "_blank", class: 'btn btn-primary' %>
+                                    <%= link_to "Open Ambulance App", "https://ea-bodi-app-canary.vercel.app/ambulance?token=#{@token_ambulance}", target: "_blank", class: 'btn btn-primary' %>
+                              </div>
