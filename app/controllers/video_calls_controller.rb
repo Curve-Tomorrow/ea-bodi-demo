@@ -4,6 +4,7 @@ class VideoCallsController < ApplicationController
   end
 
   def create
+    session[:participant_name] = 'Morgan Scott'
     @video_call = VideoCall.new(
       application_id: ENV['VONAGE_APPLICATION_ID'],
       uuid: SecureRandom.uuid,
@@ -28,6 +29,7 @@ class VideoCallsController < ApplicationController
   end
 
   def show
+    session[:participant_name] = 'Morgan Scott'
     @video_call = VideoCall.find_by!(uuid: params[:uuid])
     @token = Vonage.video.generate_client_token(session_id: @video_call.session_id) if session[:participant_name].present?
     @token_hospital = Vonage.video.generate_client_token(session_id: @video_call.session_id) if session[:participant_name].present?
